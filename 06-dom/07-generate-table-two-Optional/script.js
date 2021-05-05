@@ -11,6 +11,22 @@
 
 (function() {
 
-    // your code here
+    let target = document.getElementById("target")
+    let table = document.createElement('table')
+
+    table.setAttribute("border", "1")
+
+    for (let i = 0; i < 10; i++) {
+        let tr = document.createElement('tr')
+        for (let j = 0; j < 10; j++) {
+            let td = document.createElement('td')
+            let text = document.createTextNode((j+1)*(i+1));
+            td.appendChild(text);
+            tr.appendChild(td)
+        }
+        table.appendChild(tr)
+    }
+    target.appendChild(table)
+
 
 })();

@@ -11,13 +11,30 @@
 
 (function() {
 
-    var gallery= [
+    let gallery= [
         "../../_shared/img/bell.svg",
         "../../_shared/img/clock.svg",
         "../../_shared/img/compass.svg",
         "../../_shared/img/lemon.svg",
         "../../_shared/img/map.svg",
     ];
+
+    const button =  document.getElementById('next')
+
+    button.addEventListener('click', function(){
+
+        let x = document.getElementsByTagName("img")[0];
+        let photo = x.getAttribute("src")
+        let index = (gallery.indexOf(photo));
+        console.log(index)
+
+        let end = gallery.length
+
+        x.setAttribute("src", gallery[index + 1])
+        if (index === end-1)
+            x.setAttribute("src", gallery[0])
+
+    })
 
     // your code here
 
