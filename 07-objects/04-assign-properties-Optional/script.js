@@ -25,6 +25,29 @@
         available: true,
         os: "linux",
         user: null,
-    };
+    }
+
+    document.getElementById("run").addEventListener('click', function (){
+    for (const prop of computers) {
+
+        if (prop.available === undefined){
+            prop.available = defaultProps.available
+                   }
+        if (prop.user === undefined){
+            prop.user = defaultProps.user
+        }
+        if (prop.os === undefined){
+            prop.os = defaultProps.os
+        }
+
+        const result = {id: prop.id, available: prop.available, user: prop.user , os: prop.os};
+       console.log(result)
+
+
+
+    }
+
+
+    })
     // your code here
 })();

@@ -12,5 +12,17 @@
 (() => {
     const keys = ["name", "species", "age", "gender", "color"];
     const values = ["Skitty", "cat", 9, "female", "tabby"];
+
+    let result = Object.fromEntries(keys.map((_, i) => [keys[i], values[i]]))
+
+    document.getElementById("run").addEventListener('click', function (){
+        console.log(result);
+    });
+
+
+    //const objKeyVal = Object.fromEntries(keys, values)
+
+
+
     // your code here
 })();

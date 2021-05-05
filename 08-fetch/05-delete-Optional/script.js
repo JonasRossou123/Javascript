@@ -10,5 +10,28 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    const loadData = async (callb) => {
+        const response = await fetch('http://localhost:3000/heroes');
+        const data = await response.json();
+        callb(data)
+    };
+
+    document.getElementById('run').addEventListener('click', () => {
+
+        loadData((arr) => {
+
+            const id = parseInt(document.getElementById('hero-id').value);
+            console.log(id)
+            arr.forEach( hero => {
+                if (hero.id === id) {
+                    arr.splice(arr.indexOf(hero), 1);
+            }
+        })
+
+            console.log(arr)
+
+        });
+    });
+
 })();
